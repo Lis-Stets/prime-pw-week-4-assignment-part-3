@@ -6,12 +6,19 @@ let basket = [];
 //////Add Item function//////
 function addItem( item ) {
     console.log( 'in addItem', item );
+    if( typeof item === 'string' ){
     basket.push( item );
     console.log( item, 'added to basket');
     return true;
+    }
+    else{
+        console.log( item, 'could not be added to cart.' );
+        return false
+    }
 }//end addItem
 
 console.log( 'Item was added to basket:', addItem( 'monitor' ) );
+console.log( 'Item was added to basket:', addItem( 7 ) );
 console.log( 'Item was added to basket:', addItem( 'dogTreats' ) );
 console.log( 'Item was added to basket:', addItem( 'milk' ) );
 console.log( 'Item was added to basket:', addItem( 'coffee' ) );
@@ -38,3 +45,4 @@ function empty(){
 }
 console.log( 'basket:', basket );
 console.log( 'your current basket', empty() );
+
